@@ -1,4 +1,4 @@
-# Quizzes Django
+# Quiz interactivo multipasos con Python y Django
 
 Aplicación de cuestionarios desarrollada con Django + HTMX y Tailwind (CDN). Las preguntas se almacenan en SQLite mediante el modelo `QuizQuestion`; el avance se bloquea hasta seleccionar una opción y al finalizar se muestran resultados con aciertos, errores y porcentaje.
 
