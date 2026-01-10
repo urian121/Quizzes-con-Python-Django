@@ -1,0 +1,33 @@
+<div class="px-4">
+  <div class="flex items-center justify-between py-4">
+    <h1 class="text-lg font-semibold text-slate-900">{{ test_name }}</h1>
+    <span class="text-sm text-slate-600">{{ total_questions }} preguntas</span>
+  </div>
+
+  <div class="flex items-center gap-3 text-sm">
+    <span class="rounded-full bg-green-100 text-green-700 px-2 py-1">✓ {{ correct_count }}</span>
+    <span class="rounded-full bg-red-100 text-red-700 px-2 py-1">× {{ wrong_count }}</span>
+    <span class="ml-auto text-slate-900 font-medium">Puntuación: {{ score }}%</span>
+  </div>
+
+  <section class="mt-6 space-y-3">
+    {% for d in details %}
+    <div class="flex items-start gap-3 rounded-2xl bg-slate-100 px-4 py-3">
+      <span class="w-8 h-8 rounded-md {% if d.is_correct %}bg-green-600 text-white{% else %}bg-red-600 text-white{% endif %} flex items-center justify-center font-medium">{{ forloop.counter }}</span>
+      <div class="flex-1">
+        <div class="text-slate-900 font-medium">{{ d.pregunta }}</div>
+        <div class="mt-1 text-sm">
+          <span class="text-slate-700">Tu respuesta:</span>
+          <span class="{% if d.is_correct %}text-green-700{% else %}text-red-700{% endif %}">{{ d.selected|default:"—" }}</span>
+          <span class="ml-3 text-slate-700">Correcta:</span>
+          <span class="text-slate-900">{{ d.correcta }}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <div class="mt-8 flex justify-end">
+    <a href="/" class="rounded-full bg-blue-600 text-white px-5 py-2 hover:cursor-pointer">Reiniciar</a>
+  </div>
+</div>

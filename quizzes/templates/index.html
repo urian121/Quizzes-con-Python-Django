@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+    <div class="min-h-screen bg-slate-50">
+        <header class="bg-white">
+            <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+                <h1 id="title" class="text-lg font-semibold text-slate-900">Quiz</h1>
+            </div>
+        </header>
+
+        <main class="max-w-3xl mx-auto px-4 py-6">
+            <div id="quiz" hx-get="/quiz/question?q=1" hx-trigger="load" hx-swap="innerHTML">
+                <div class="animate-pulse text-slate-500">Cargando quiz…</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
