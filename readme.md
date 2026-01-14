@@ -18,3 +18,7 @@ Aplicación de cuestionarios desarrollada con Django + HTMX y Tailwind (CDN). La
 - Navegación: “Siguiente” solo habilita tras elegir opción.
 - Resultados: al terminar, se muestran en `/quiz/results`.
 - Reinicio: botón “Reiniciar” en la página de resultados.
+
+
+## Apoya el proyecto
+Si te fue útil, deja una ⭐ en GitHub y compártelo.
